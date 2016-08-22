@@ -15,6 +15,7 @@ body {
     line-height: 1.5;
     background-color: #3bb9ef;
     background-image: url(../img/pattern.png);
+    color: #333;
 }
 
 h1,
@@ -231,6 +232,10 @@ ul {
 
     .hide-print {
         display: none;
+    }
+    
+    a {
+        color: #333 !Important;
     }
 
     .xp {
