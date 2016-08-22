@@ -1,10 +1,3 @@
-/* Variables */
-
-html {
-    --baseline: 1.25rem;
-    --link-color: #138ec1;
-}
-
 /* Reset */
 
 * {
@@ -34,17 +27,17 @@ p,
 table,
 ul,
 ol {
-    margin-bottom: var(--baseline);
+    margin-bottom: 1.25rem;
 }
 
 a,
 a:visited {
-    color: var(--link-color);
+    color: #138ec1;
     text-decoration: none;
 }
 
 ul {
-    margin-left: var(--baseline);
+    margin-left: 1.25rem;
 }
 
 .unstyled {
@@ -70,24 +63,28 @@ ul {
 }
 
 .container {
-    padding-left: var(--baseline);
-    padding-right: var(--baseline);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 800px;
+}
+
+.hide-web {
+    display: none;
 }
 
 /* Styles */
 
 .intro {
     background-color: #fff;
-    padding: calc(var(--baseline)*2) 0;
-    margin-bottom: var(--baseline);
+    padding: calc(1.25rem*2) 0;
+    margin-bottom: 1.25rem;
 }
 
 .header {
     border-bottom: 1px solid #eee;
-    padding-bottom: var(--baseline);
-    margin-bottom: var(--baseline);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .me {
@@ -103,7 +100,7 @@ ul {
 .xp {
     background: #fff;
     box-shadow: 0 1px 1px rgba(0,0,0,0.4);
-    margin-bottom: var(--baseline);
+    margin-bottom: 1.25rem;
     border-radius: 2px;
     overflow: hidden;
 }
@@ -115,7 +112,7 @@ ul {
 
 .xp__header,
 .xp__body {
-    padding: var(--baseline);
+    padding: 1.25rem;
 }
 
 .xp__body {
@@ -160,7 +157,7 @@ ul {
     height: 40px;
     width: 40px;
     line-height: 40px;
-    margin-right: calc(var(--baseline)/2);
+    margin-right: calc(1.25rem/2);
 }
 
 .xp__logo--wotif {
@@ -184,6 +181,12 @@ ul {
     background: #ff0088;
 }
 
+.xp__details { flex: 1 }
+
+.xp__highlights li {
+    margin-bottom: 0.3125rem;
+}
+
 .social {
     display: inline-block;
     background: #ccc;
@@ -195,6 +198,19 @@ ul {
     text-align: center;
     margin-left: 10px;
     opacity: 0.5;
+    transition: all 0.25s ease;
+}
+
+.social:hover {
+    opacity: 1;
+}
+
+.contacts {
+    font-size: 11px;
+}
+
+.contacts td:first-child {
+    width: 80px;
 }
 
 /* Responsive */
@@ -203,6 +219,42 @@ ul {
 
     html {
         font-size: 18px;
+    }
+
+}
+
+@media print {
+
+    @page {
+        margin: 1cm 0.5cm;
+    }
+
+    .hide-print {
+        display: none;
+    }
+
+    .xp {
+        box-shadow: none;
+        background: none;
+    }
+
+    .break-page {
+        page-break-before: always;
+    }
+
+    .intro,
+    .xp__header,
+    .xp__body {
+        padding: 0;
+    }
+
+    .intro,
+    .xp__header {
+        margin-bottom: 20px;
+    }
+
+    .hide-web {
+        display: block;
     }
 
 }
