@@ -219,7 +219,6 @@ img {
 }
 
 .xp__hero--tj {
-  height: 510px;
   margin-bottom: 2.5rem;
 }
 
@@ -370,9 +369,14 @@ img {
 }
 
 .thumbs__col {
-  width: 25%;
+  width: 50%;
   padding-left: 20px;
   margin-bottom: 20px;
+}
+
+.thumbs__col:nth-child(11),
+.thumbs__col:nth-child(12) {
+  margin-bottom: 0;
 }
 
 .thumb {
@@ -525,10 +529,21 @@ img {
 
 /* Responsive */
 
-@media(min-width: 1200px) {
+@media(min-width: 1024px) {
 
   html {
     font-size: 18px;
+  }
+
+  .thumbs__col {
+    width: 25%;
+  }
+
+  .thumbs__col:nth-child(9),
+  .thumbs__col:nth-child(10),
+  .thumbs__col:nth-child(11),
+  .thumbs__col:nth-child(12) {
+    margin-bottom: 0;
   }
 
 }
